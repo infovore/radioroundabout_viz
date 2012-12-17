@@ -150,14 +150,14 @@ void keyPressed()
   {
   case LEFT:
     if(keyEvent.isShiftDown()) {
-      transX -= 5;
+      transX += 5;
     } else {
       rotY += 0.1f;
     }
     break;
   case RIGHT:
     if(keyEvent.isShiftDown()) {
-      transX += 5;
+      transX -= 5;
     } else {
       rotY -= 0.1f;
     }
