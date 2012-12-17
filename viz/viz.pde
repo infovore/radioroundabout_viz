@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
- * Radio Roundabout: stupid data visualizer
+ * Radio Roundabout: stupid visualizer
  * --------------------------------------------------------------------------
  * prog:  Max Rheiner / Interaction Design / zhdk / http://iad.zhdk.ch/
  *        Damian Di Fede
