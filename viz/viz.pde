@@ -1,10 +1,9 @@
 /* --------------------------------------------------------------------------
- * SimpleOpenNI AlternativeViewpoint3d Test
- * --------------------------------------------------------------------------
- * Processing Wrapper for the OpenNI/Kinect library
- * http://code.google.com/p/simple-openni
+ * Radio Roundabout: stupid data visualizer
  * --------------------------------------------------------------------------
  * prog:  Max Rheiner / Interaction Design / zhdk / http://iad.zhdk.ch/
+ *        Damian Di Fede
+ *        Tom Armitage glued a lot of stuff together.
  * date:  06/11/2011 (m/d/y)
  * ----------------------------------------------------------------------------
  */
