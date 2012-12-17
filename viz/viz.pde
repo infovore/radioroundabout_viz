@@ -29,6 +29,7 @@ int          ampMultiplier = 1000;
 
 void setup()
 {
+  frameRate(10);
   size(320,240,OPENGL);
   sphereDetail(10);
 
@@ -83,7 +84,7 @@ void draw()
 
   PImage  rgbImage = context.rgbImage();
   int[]   depthMap = context.depthMap();
-  int     steps   = 5;  // to speed up the drawing, draw every third point
+  int     steps   = 5;  // to speed up the drawing, draw every fifth point
   int     index;
   PVector realWorldPoint;
   color   pixelColor;
@@ -112,13 +113,10 @@ void draw()
       }
     }
   } 
-
-  // draw the kinect cam
-  //context.drawCamFrustum();
 }
 
 float getStrokeWeight() {
-  float output = in.left.get(0) * ampMultiplier;
+  float output = in.left.level() * ampMultiplier;
   if(output < 2.0) {
     return 2.0;
   } else {
