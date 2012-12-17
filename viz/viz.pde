@@ -25,6 +25,7 @@ float        rotY = radians(0);
 float        transX = 0;
 float        transY = 0;
 int          sphereRadius = 15;
+int          ampMultiplier = 1000;
 
 void setup()
 {
@@ -82,7 +83,7 @@ void draw()
 
   PImage  rgbImage = context.rgbImage();
   int[]   depthMap = context.depthMap();
-  int     steps   = 10;  // to speed up the drawing, draw every third point
+  int     steps   = 5;  // to speed up the drawing, draw every third point
   int     index;
   PVector realWorldPoint;
   color   pixelColor;
@@ -106,11 +107,8 @@ void draw()
         
         // draw the projected point
         realWorldPoint = realWorldMap[index];
-        //point(realWorldPoint.x,realWorldPoint.y,realWorldPoint.z);  // make realworld z negative, in the 3d drawing coordsystem +z points in the direction of the eye
-        pushMatrix();
-        translate(realWorldPoint.x, realWorldPoint.y, realWorldPoint.z);
-        sphere(getSphereRadius());
-        popMatrix();
+        strokeWeight(getStrokeWeight());
+        point(realWorldPoint.x,realWorldPoint.y,realWorldPoint.z);  // make realworld z negative, in the 3d drawing coordsystem +z points in the direction of the eye
       }
     }
   } 
@@ -119,10 +117,10 @@ void draw()
   //context.drawCamFrustum();
 }
 
-float getSphereRadius() {
-  float output = in.left.get(0) * 1000;
-  if(output < 5.0) {
-    return 5.0;
+float getStrokeWeight() {
+  float output = in.left.get(0) * ampMultiplier;
+  if(output < 2.0) {
+    return 2.0;
   } else {
     return output;
   }
@@ -143,6 +141,43 @@ void keyPressed()
   {
   case ' ':
     context.setMirror(!context.mirror());
+    break;
+  case '1':
+    ampMultiplier = 100;
+    break;
+  case '2':
+    ampMultiplier = 200;
+    break;
+  case '3':
+    ampMultiplier = 300;
+    break;
+  case '4':
+    ampMultiplier = 400;
+    break;
+  case '5':
+    ampMultiplier = 500;
+    break;
+  case '6':
+    ampMultiplier = 600;
+    break;
+  case '7':
+    ampMultiplier = 700;
+    break;
+  case '8':
+    ampMultiplier = 800;
+    break;
+  case '9':
+    ampMultiplier = 900;
+    break;
+  case '0':
+    ampMultiplier = 1000;
+    break;
+  case 'r':
+    transX = 0;
+    transY = 0;
+    rotX = 0;
+    rotY = 0;
+    zoomF = 0;
     break;
   }
 
