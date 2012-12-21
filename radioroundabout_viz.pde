@@ -4,7 +4,7 @@
  * prog:  Max Rheiner / Interaction Design / zhdk / http://iad.zhdk.ch/
  *        Damian Di Fede
  *        Tom Armitage glued a lot of stuff together.
- * date:  06/11/2011 (m/d/y)
+ * date:  12/19/2011 (m/d/y)
  * ----------------------------------------------------------------------------
  */
 
@@ -30,17 +30,12 @@ void setup()
 {
   frameRate(10);
   size(320,240,OPENGL);
-  sphereDetail(10);
 
   // let's set up the audio in
   minim = new Minim(this);
-  // get a line in from Minim, default bit depth is 16
   in = minim.getLineIn(Minim.STEREO, 512);
 
-  //context = new SimpleOpenNI(this,SimpleOpenNI.RUN_MODE_SINGLE_THREADED);
   context = new SimpleOpenNI(this);
-
-  // disable mirror
   context.setMirror(false);
 
   // enable depthMap generation 
@@ -107,6 +102,7 @@ void draw()
         
         // draw the projected point
         realWorldPoint = realWorldMap[index];
+        // ...at a size corresponding to audio volume
         strokeWeight(getStrokeWeight());
         point(realWorldPoint.x,realWorldPoint.y,realWorldPoint.z);  // make realworld z negative, in the 3d drawing coordsystem +z points in the direction of the eye
       }
