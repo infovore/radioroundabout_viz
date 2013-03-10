@@ -1,15 +1,15 @@
-Radio Roundabout Amazing Visualizer
------------------------------------
+# Radio Roundabout Amazing Visualizer
+
 
 Displays the world in blobs that pulse with sound.
 
 Requirements:
 
 * MS Kinect + power lead
-* Processing 1.5.1 (not tested in 2.0) (http://processing.googlecode.com/files/processing-1.5.1-macosx.zip)
-* Minim 2.0 (http://code.compartmental.net/minim/distro/minim-2.0.2-full.zip)
-* SimpleOpenNI (http://code.google.com/p/simple-openni/wiki/Installation)
-* If you want to use anything other than the internal mic or line-in on the Mac as a soundcard, you'll need Soundflower (http://cycling74.com/soundflower-landing-page/)
+* [Processing 1.5.1](http://processing.googlecode.com/files/processing-1.5.1-macosx.zip) (not tested in 2.0)
+* [Minim 2.0](http://code.compartmental.net/minim/distro/minim-2.0.2-full.zip)
+* [SimpleOpenNI](http://code.google.com/p/simple-openni/wiki/Installation)
+* If you want to use anything other than the internal mic or line-in on the Mac as a soundcard, you'll need something like [Soundflower](http://cycling74.com/soundflower-landing-page/)
 
 Install Processing, then SimpleOpenNI (using the shell script - you'll probably need sudo) and finally Minim. Install soundflower.
 
